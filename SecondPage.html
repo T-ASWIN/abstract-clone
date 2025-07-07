@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abtract</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        height: 90px;
+        text-align: center;
+        padding: 0px 8%;
+      }
+      .nav-left {
+        display: flex;
+        align-items: center;
+
+        border: 2px solid white;
+        width: 30%;
+      }
+      .nav-left a {
+        color: #fdfdfd;
+        text-decoration: none;
+        font-size: 25px;
+        margin-left: 0px;
+        border: 2px solid white;
+      }
+      .nav-right {
+        border: 2px solid white;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+      }
+      .btn {
+        padding: 10px 20px;
+        margin-left: 20px;
+        font-size: 25px;
+        border-radius: 10px;
+      }
+      .input {
+        width: 30%;
+      }
+      .btn-1 {
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+      }
+      .btn-2 {
+        background-color: #4c5fd5;
+        color: white;
+        border: 1px solid #4c5fd5;
+      }
+
+      .search {
+        height: 60vh;
+        background-color: #dadbf1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .const {
+        width: 50%;
+      }
+      .const h1 {
+        font-size: 500%;
+        width: 100%;
+        text-align: center;
+      }
+      .const input {
+        width: 100%;
+        height: 60px;
+        border-radius: 5px;
+        margin-top: 50px;
+      }
+      .nav-right-alt {
+        display: none;
+      }
+      .nav-right-alt i {
+        margin-left: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      @media screen and (max-width: 740px) {
+        .nav-right {
+          display: none;
+        }
+        .nav-right-alt {
+          display: block;
+        }
+      }
+
+      #container {
+        margin-top: 20px;
+        border: 2px solid rgb(224, 76, 76);
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+      }
+
+      #container h1 {
+        color: aqua;
+        text-align: center;
+      }
+      .container2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 20px;
+        width: 100%;
+        margin-left: 50px;
+        margin-bottom: 30px;
+      }
+
+      .container2 > div {
+        border: 2px solid black;
+        padding: 20px;
+        width: 80%;
+        background-color: rgb(253, 253, 253);
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .image {
+        width: 20%;
+      }
+
+      .image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .text-content {
+        width: 100%;
+        margin-left: 5%;
+        letter-spacing: 0.6px;
+        padding: 5px;
+        padding-bottom: 15px;
+      }
+      .text-content h2 {
+        margin-bottom: 10px;
+      }
+
+      .text-content p {
+        margin-bottom: 10px;
+      }
+
+      .text-content a {
+        text-decoration: none;
+      }
+      footer {
+        margin-top: 170px;
+        width: 100%;
+        min-height: 60vh;
+        background-color: black;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 50px;
+      }
+
+      .foot-item ul li a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      .foot-item ul li {
+        list-style: none;
+        margin-top: 10px;
+      }
+
+      .foot-item h2 {
+        margin-bottom: 20px;
+      }
+
+      .foot-left {
+        border: 2px solid rgb(255, 255, 255);
+        grid-template-columns: repeat(4, 1fr);
+
+        width: 50%;
+        justify-content: space-between;
+        /* margin-left: 7%; */
+        padding-top: 50px;
+        display: grid;
+      }
+      .foot-right {
+        border: 2px solid rgb(255, 255, 255);
+
+        width: 20%;
+        display: flex;
+        align-items: end;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      @media screen and (max-width: 750px) {
+        .container2 {
+          grid-template-columns: 1fr;
+          width: 100%;
+          padding-left: 40px;
+        }
+      }
+      @media screen and (max-width: 850px) {
+        .foot-left {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          /* grid-template-rows: auto auto; */
+          gap: 20px;
+          width: 100%;
+          padding: 40px;
+        }
+
+        .foot-item {
+          width: 100%;
+        }
+
+        .foot-right {
+          width: 100%;
+          text-align: center;
+          justify-content: center;
+          padding: 20px;
+          border: none;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="main">
+      <div class="nav-left">
+        <img
+          src="https://cdn.prod.website-files.com/5ff3926f03b3ba26b7d639cb/60c388bf3c3ae4d1d10653e7_Abstract_Wordmark-White.svg"
+          alt="Logo"
+          width="60%"
+          height="30px"
+        />
+        <a href="https://www.goabstract.com/">| Help Center</a>
+      </div>
+      <div class="nav-right">
+        <input type="text" placeholder="Search" class="btn input" />
+        <button class="btn btn-1">Submit Request</button>
+        <button class="btn btn-2">Sign in</button>
+      </div>
+      <div class="nav-right-alt">
+        <i
+          class="fa-solid fa-magnifying-glass"
+          style="color: #ffffff; font-size: 25px"
+        ></i>
+        <i class="fa-solid fa-bars" style="color: #ffffff; font-size: 25px"></i>
+      </div>
+    </nav>
+    <section class="search">
+      <div class="const">
+        <a href="">Abstract</a>
+        <h3>> USing Abstract</h3>
+        <h1>Using Abstract</h1>
+        <p>
+          Abstract lets you manage,version, and document your designs in one
+          place
+        </p>
+      </div>
+    </section>
+
+    <section id="container">
+      <h1>Get started in Abstract</h1>
+      <ul>
+        <li>Try out Abstract</li>
+        <li>The Abstract Design Workflow</li>
+        <li>Start Working In Abstract</li>
+        <li>Practice Abstract workflow</li>
+        <li>Glossary</li>
+      </ul>
+      <h1>Using the Abstract Desktop App</h1>
+      <ul>
+        <li>Update to the newest version of Abstract</li>
+        <li>Backing Up your Work in Abstract</li>
+        <li>System requirements</li>
+        <li>Downloading the Abstract Desktop Application</li>
+        <li>The Abstract plugin</li>
+        <li>Keyboard shortcuts</li>
+      </ul>
+    </section>
+
+    <footer>
+      <div class="foot-left">
+        <div class="foot-item">
+          <h2>Abstract</h2>
+          <ul>
+            <li>
+              <a href="">Start Trial</a>
+            </li>
+            <li>
+              <a href="">Pricing</a>
+            </li>
+            <li>
+              <a href="">Download</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="foot-item">
+          <h2>Resources</h2>
+          <ul>
+            <li>
+              <a href="">Blog</a>
+            </li>
+            <li>
+              <a href="">Help Center</a>
+            </li>
+            <li>
+              <a href="">Release Note</a>
+            </li>
+            <li>
+              <a href="">Status</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="foot-item">
+          <h2>Community</h2>
+          <ul>
+            <li>
+              <a href="">Twitter</a>
+            </li>
+            <li>
+              <a href="">Linked In</a>
+            </li>
+            <li>
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <a href="">Dribble</a>
+            </li>
+            <li>
+              <a href="">Podcast</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="foot-item">
+          <h2>Company</h2>
+          <ul>
+            <li>
+              <a href="">About Us</a>
+            </li>
+            <li>
+              <a href="">Careers</a>
+            </li>
+            <li>
+              <a href="">Legal</a>
+            </li>
+          </ul>
+          <h2 style="margin-top: 20px; margin-bottom: 10px">Content us</h2>
+          <ul>
+            <li>
+              <a href="">info@goabstract.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-right">
+        <h3>
+          © Copyright 2025 Abstract Studio Design, Inc. All rights reserved
+        </h3>
+      </div>
+    </footer>
+  </body>
+</html>

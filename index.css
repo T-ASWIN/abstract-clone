@@ -12,6 +12,8 @@
     height: 90px;
     text-align: center;
     padding: 0px 8%;
+    border: 2px solid rgb(199, 65, 65);
+    
 }
 
 .nav-left {
@@ -48,7 +50,9 @@
 
 .btn-1 {
     background-color: black;
-    color: white;
+    border: 2px solid white;
+    color: rgb(255, 255, 255);
+    
 
 }
 
@@ -102,11 +106,14 @@
     .nav-right-alt {
         display: block;
     }
+    .nav-left {
+        width: 80%;
+    }
 }
 
 #container {
     margin-top: 20px;
-    
+    border: 2px solid red;
     background-color: rgb(255, 255, 255);
     padding: 20px;
 }
@@ -118,7 +125,7 @@
     /* 2 columns */
     gap: 20px;
     width: 100%;
-    margin-left: 50px;
+    padding-left: 50px;
     margin-bottom: 30px;
 }
 
@@ -159,6 +166,10 @@
 
 .text-content a {
     text-decoration: none;
+    color: rgb(92, 92, 255);
+}
+.text-content a:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -240,6 +251,14 @@ footer {
         border: none;
     }
 }
+@media screen and (max-width:750px){
+    .const h1{
+    font-size:200%;
+    }
+    .const input{
+        margin-top: 20px;
+    }
+}
 
 /* inside page css code */
 .searchpages{
@@ -256,8 +275,16 @@ footer {
     font-family: sans-serif;
     font-weight: lighter;
     font-size: 80px;
-
 }
+.searchpages a{
+    text-decoration: none;
+    color: #000000;
+}
+.searchpages a:hover {
+    text-decoration: underline;
+    color: rgb(74, 74, 239);
+}
+
 @media screen and (max-width: 500px){
     .searchpages h1 {
             font-family: sans-serif;
